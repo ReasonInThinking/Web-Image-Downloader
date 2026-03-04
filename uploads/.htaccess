@@ -1,0 +1,6 @@
+# Ban on PHP scripts
+php_flag engine off
+
+# Blocks access to uploads
+Options -Indexes
+

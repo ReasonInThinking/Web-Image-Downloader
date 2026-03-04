@@ -1,0 +1,2 @@
+# Limit file 1mb
+LimitRequestBody 1048576
