@@ -61,8 +61,3 @@ if (isset($_SESSION['result'])) {
 
 </html>
 
-
-
-
-
-<!-- 220 мин -->
