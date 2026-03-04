@@ -1,34 +1,37 @@
-# Simple & Secure PHP Image Uploader
+# 🖼️ PHP Image Uploader
 
-This is a lightweight web application for uploading images, built with PHP, JavaScript, and CSS. The project focuses on a clean user interface and basic server-side security.
+A simple and clean web application for uploading images. This project provides a user-friendly interface and handles file processing with PHP.
 
 <img width="867" height="860" alt="file-load" src="https://github.com/user-attachments/assets/cd08eadd-7c04-4f3b-b554-4f5e90c5f039" />
 
+## ✨ Features
+- **Dynamic UI**: Shows the selected file name before uploading using JavaScript.
+- **Session Notifications**: Displays success or error messages and image previews using PHP sessions.
+- **Automatic Renaming**: Generates unique filenames to prevent overwriting existing files.
+- **Responsive Design**: Minimalist and clean styling for the upload form.
 
-## Features
-*   **Image Preview**: Displays the uploaded image immediately after a successful upload.
-*   **Dynamic UI**: JavaScript updates the label to show the name of the selected file.
-*   **Session Management**: Uses PHP sessions to pass messages and file paths between pages.
-*   **Security**: Includes an `.htaccess` file to protect the server from malicious scripts.
+## 🚀 How to Use
+1. Clone the repository to your local server (XAMPP, WAMP, or MAMP).
+2. Ensure the `uploads/` directory has write permissions (`chmod 775`).
+3. Open `index.php` in your browser.
+4. Select an image (**jpg, jpeg, png, gif**) and click **Send**.
 
-## Project Structure
-*   `index.php` - The main page with the upload form and result display.
-*   `handler.php` - The backend script that processes the uploaded file.
-*   `style.css` - UI styling for the form, buttons, and layout.
-*   `uploads/` - The folder where images are stored.
-*   `.htaccess` - A configuration file that disables PHP execution in the uploads folder for safety.
+## 🛠️ Tech Stack
+- **Backend**: PHP 7.4+
+- **Frontend**: HTML5, CSS3, JavaScript
+- **Server**: Apache
 
-## Security Measures
-To keep the server safe, this project uses:
-1.  **Execution Block**: The `php_flag engine off` command in `.htaccess` prevents hackers from running PHP scripts if they manage to upload them.
-2.  **Anti-Indexing**: Prevents users from viewing the list of all files in the `uploads/` folder.
-3.  **Client-side Filter**: The form only accepts `.jpg`, `.jpeg`, `.png`, and `.gif` formats.
+## 🔒 Under the Hood (Security)
+While the UI is simple, the backend includes essential protection:
+- **Image Validation**: Uses `getimagesize()` to verify that the uploaded file is a real image.
+- **File Limits**: Enforces a 1MB maximum file size.
+- **Execution Block**: The `.htaccess` file disables the PHP engine in the `uploads/` folder to prevent script execution.
+- **Index Protection**: Prevents directory browsing with `Options -Indexes`.
 
-## How to Install
-1.  Download or clone this repository to your local server (XAMPP, WAMP, etc.).
-2.  Make sure the `uploads` folder is created and has write permissions.
-3.  Open `index.php` in your browser and try uploading an image!
+## 📂 Project Structure
+- `index.php` — The main page with the upload form.
+- `handler.php` — Server-side logic for file validation and storage.
+- `style.css` — Custom UI styles.
+- `uploads/` — Storage directory for images.
+- `.htaccess` — Server configuration for security.
 
-## Requirements
-*   PHP 7.0 or higher
-*   Apache Server (for `.htaccess` support)
